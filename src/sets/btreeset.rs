@@ -1,8 +1,13 @@
+/// The `bset` macro will construct a [`BTreeSet`] using the [`std`]'s
+/// implementation.
+///
+/// [`BTreeSet`]: std::collections::BTreeSet
+/// [`std`]: std
 #[macro_export]
 macro_rules! bset {
     {} => {
         {
-            std::collections::BTreeMap::new()
+            std::collections::BTreeSet::new()
         }
     };
     { $($value:expr),* $(,)? } => {

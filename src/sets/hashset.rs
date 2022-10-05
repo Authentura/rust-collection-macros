@@ -1,3 +1,18 @@
+/// The `hset` macro will construct a [`HashSet`] using the [`std`]'s
+/// implementation by default.
+///
+/// # Optional features
+///
+/// If the `dashset` feature is enabled, then the [`DashSet`] backend will be
+/// used.
+///
+/// If the `thincollections` feature is enabled, then the [`ThinSet`] backend
+/// will be used.
+///
+/// [`HashSet`]: std::collections::HashSet
+/// [`DashSet`]: dashset::DashSet
+/// [`ThinSet`]: thincollections::thin_set::ThinSet
+/// [`std`]: std
 #[macro_export]
 macro_rules! hset {
     {} => {
