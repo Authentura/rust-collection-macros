@@ -1,3 +1,7 @@
+**_Disclaimer:_** _This is intended for internal template use but feel free to
+use. It is unlikely feature additions will be merged unless we would like to
+add it ourselves._
+
 This is just a small repository that contains simple macros for creating maps
 and sets of differing types and backends.
 
