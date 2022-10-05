@@ -9,8 +9,8 @@ description = "Simple and configurable macros for maps and sets."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dashmap = { version = "*", optional = true }
-thincollections = { version = "*", optional = true }
+dashmap = { version = "5.4", optional = true }
+thincollections = { version = "0.5", optional = true }
 
 [features]
 default = ["map-macro-use-hmap", "set-macro-use-hset"]
