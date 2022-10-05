@@ -1,7 +1,10 @@
 #![cfg(test)]
 
 use crate::*;
+#[cfg(dashmap)]
+use dashmap::DashMap as HashMap;
 use std::collections::BTreeMap;
+#[cfg(not(dashmap))]
 use std::collections::HashMap;
 
 #[test]
