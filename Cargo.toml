@@ -1,8 +1,9 @@
 [package]
 name = "simple-collection-macros"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Samuel Boyden <s.boyden@authentura.com>"]
+license = "MIT"
 license-file = "LICENSE.md"
 description = "Simple and configurable macros for maps and sets."
 repository = "https://github.com/Authentura/rust-collection-macros"
