@@ -6,6 +6,5 @@ compile_error!("Feature \"set-macro-use-hset\" and \"set-macro-use-bset\" are no
 
 #[macro_use]
 pub mod maps;
-
-#[cfg(test)]
-mod tests;
+#[macro_use]
+pub mod sets;
