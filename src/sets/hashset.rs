@@ -2,7 +2,14 @@
 macro_rules! hset {
     {} => {
         {
-            std::collections::HashSet::new()
+            #[cfg(all(not(dashmap), not(thincollections)))]
+            use std::collections::HashSet;
+            #[cfg(dashmap)]
+            use dashmap::DashSet as HashSet;
+            #[cfg(thincollections)]
+            use thincollections::thin_map::ThinSet as HashSet;
+
+            HashSet::new()
         }
     };
     { $($value:expr),* $(,)? } => {
