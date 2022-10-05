@@ -1,5 +1,7 @@
+pub mod btreemap;
 pub mod hashmap;
 
+pub use btreemap::*;
 pub use hashmap::*;
 
 #[macro_export]

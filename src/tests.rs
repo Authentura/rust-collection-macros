@@ -1,6 +1,7 @@
 #![cfg(test)]
 
 use crate::*;
+use std::collections::BTreeMap;
 use std::collections::HashMap;
 
 #[test]
@@ -18,4 +19,21 @@ fn hashmap_few() {
     };
 
     assert_eq!(hashmap, HashMap::from([("hello", 1), ("world", 2)]));
+}
+
+#[test]
+fn btreemap_none() {
+    let btreemap: BTreeMap<i32, i32> = bmap! {};
+
+    assert_eq!(btreemap, BTreeMap::new());
+}
+
+#[test]
+fn btreemap_few() {
+    let btreemap = bmap! {
+        "hello" => 1,
+        "world" => 2
+    };
+
+    assert_eq!(btreemap, BTreeMap::from([("hello", 1), ("world", 2)]));
 }
