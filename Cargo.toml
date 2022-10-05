@@ -1,0 +1,18 @@
+[package]
+name = "collection-macros"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dashmap = { version = "*", optional = true }
+
+[features]
+default = ["map-macro-use-hmap", "set-macro-use-hset"]
+dashmap = ["dep:dashmap"]
+
+map-macro-use-hmap = []
+map-macro-use-bmap = []
+set-macro-use-hset = []
+set-macro-use-bset = []
