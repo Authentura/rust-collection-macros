@@ -6,16 +6,24 @@ pub use hashmap::*;
 
 #[macro_export]
 macro_rules! map {
-    {} => {{
-        hmap!{}
-    }};
-    { $( $key:tt => $value:tt ),* } => {{
-        hmap!{}
-    }};
-    { $( $key:tt => $values:expr ),* } => {{
-        hmap!{}
-    }};
-    { $( $range:expr => $value:tt ),* } => {{
-        hmap!{}
-    }};
+    {} => {
+        {
+            #[cfg(map-macro-use-hmap)]
+            hmap!{}
+            #[cfg(map-macro-use-bmap)]
+            hmap!{}
+        }
+    };
+    { $($key:expr => $value:expr),* $(,)? } => {
+       {
+           let mut m = map!{};
+
+           $(
+               m.insert($key, $value);
+           )*
+
+           m
+       }
+    }
+
 }
